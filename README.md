@@ -44,7 +44,7 @@ Three tab-delimited text files are required as input for running POIROT.
 
 For the example analysis, we have provided sample files containing simulated data on 1000 unrelated subjects. We have included data on 5 phenotypes we are interested in testing for parent-of-origin effects. While the method is scalable to hundreds of thousands of SNPs, we have included data on two SNPs for this toy analysis.
 
-### Load R Functions and Input Files
+### 1. Load R Functions and Input Files
 
 ```
 # Set working directory to that housing the POIROT functions R script and input files
@@ -54,4 +54,22 @@ source("POIROT-functions.R")
 PHENO <- read.delim("phenotypes.txt")
 GENO <- read.delim("variants.txt")
 COVAR <- read.delim("covariates.txt")
+```
+
+### 2. Covariate Adjustment
+
+```
+PHENO_ADJ <- extract_residuals(PHENO,COVAR)
+```
+
+### 3. Perform Test
+
+```
+# the following assumes all variants in GENO will be tested for parent-of-origin effects
+out <- data.frame(t(sapply(1:ncol(GENO),
+                           FUN=do_POIROT_by_snp,
+                           phenodat=PHENO_ADJ,
+                           genodat=GENO)))
+out$variant <- colnames(GENO)
+head(out) # data frame of final results
 ```
