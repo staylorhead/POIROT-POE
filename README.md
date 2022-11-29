@@ -40,5 +40,18 @@ Three tab-delimited text files are required as input for running POIROT.
 * Rows (subjects) should already be sorted to match the order of rows (subjects) in the other two input files. 
 * Variants must be coded by minor allele count (0/1/2).
 
-### Running POIROT
-For the example analysis, we have provided sample files containing simulated data on 1000 unrelated subjects. We have included data on 5 phenotypes we are interested in testing for parent-of-origin effects. While the method is scalable to hundreds of thousands of SNPs, we have included data on two SNPs for ease.
+## Example Analysis
+
+For the example analysis, we have provided sample files containing simulated data on 1000 unrelated subjects. We have included data on 5 phenotypes we are interested in testing for parent-of-origin effects. While the method is scalable to hundreds of thousands of SNPs, we have included data on two SNPs for this toy analysis.
+
+### Load R Functions and Input Files
+
+```
+# Set working directory to that housing the POIROT functions R script and input files
+
+source("POIROT-functions.R")
+
+PHENO <- read.delim("phenotypes.txt")
+GENO <- read.delim("variants.txt")
+COVAR <- read.delim("covariates.txt")
+```
