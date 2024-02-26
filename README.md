@@ -1,9 +1,9 @@
 # POIROT: Parent-of-Origin Inference using Robust Omnibus Test
 
 ## Introduction
-POIROT is a tool developed for identifying genetic variants harboring parent-of-origin effects (POEs) in unrelated samples that considers multiple quantitative phentoypes simulateneously. The method is based on a robust test for equality of phenotypic covariance matrices between heterozygotes and homozygotes at a given locus. POIROT can handle both normally-distributed and non-normal continuous phenotypes. The method also adjusts for the effects of important covariates. For more information on this method, please see the following pre-print:
+POIROT is a tool developed for identifying genetic variants harboring parent-of-origin effects (POEs) in unrelated samples that considers multiple quantitative phentoypes simulateneously. The method is based on a robust test for equality of phenotypic covariance matrices between heterozygotes and homozygotes at a given locus. POIROT can handle both normally-distributed and non-normal continuous phenotypes. The method also adjusts for the effects of important covariates. For more information on this method and to cite usage, please see the following article:
 
->[*POIROT: A powerful test for parent-of-origin effects in unrelated samples leveraging multiple phenotypes.* bioRxiv.](https://doi.org/10.1101/2022.11.28.517712)
+>[*POIROT: A powerful test for parent-of-origin effects in unrelated samples leveraging multiple phenotypes.* Bioinformatics.]([https://doi.org/10.1101/2022.11.28.517712](https://academic.oup.com/bioinformatics/article/39/4/btad199/7126417))
 
 POIROT is implemented as a series of R functions which can be loaded and executed in an R environment and are described in this manual.
 
